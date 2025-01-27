@@ -4,17 +4,19 @@
 ## Key Features
 
 ### 1. **Download and Clustering**
-- Retrieve sequences from GenBank for specific taxonomic groups.
-- Perform local alignments using **BLAST** to assess sequence similarity.
-- Cluster sequences based on taxonomic sampling.
+- **Taxonomic Database Assembling Phase**: Automatically create a custom database using GenBank data for specific taxonomic groups, based on a user-defined configuration file.
+- **BLAST Phase**: Perform local alignments using **BLAST** on large sequence databases, including data from GenBank or custom local datasets.
+- **Sequence Clustering Phase**: Group orthologous sequences based on taxonomic coverage, enabling efficient data handling and phylogenetic analysis.
 
 ### 2. **Refinement and Post-Processing**
-- Simplify sequence headers.
-- Rename clusters based on user-provided lists.
-- Select long sequences by taxonomic level and prepare for further BLAST analysis.
+- **Cluster Renaming**: Renames sequence clusters for better clarity using a user-provided list, ensuring easy identification and reusability.
+- **Taxonomic Level Filtering**: Filter sequences by taxonomic level and number of sequences, allowing for high-quality marker selection.
+- **Post-Processing**: Optional steps to convert and reformat sequence data as required.
 
 ### 3. **Molecular Marker Summary**
-- Generate tables summarizing markers, accession numbers, and taxonomic coverage.
+- **Summary Table Generation**: Create a summary table of molecular markers, including species names, accession numbers, and taxonomic coverage, which can be included in publications.
+
+Further details on each phase are provided in the **manual**.
 
 ## Requirements
 - **Perl 5 or higher**  
@@ -22,7 +24,7 @@
 - NCBI tools for database search and download ([Entrez Direct](https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh))  
 - **Python 3 or higher** (optional, for generating the configuration file or using the pipeline via a graphical interface).
 - **Unix-like system** (e.g., **Linux** or **macOS**).  
-- This pipeline is designed to run on **Unix-based operating systems** and is **not supported on Windows** natively.
+  - This pipeline is designed to run on **Unix-based operating systems** and is **not supported on Windows** natively.
 
 ## License
 
