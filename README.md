@@ -10,7 +10,6 @@ The pipeline can be executed using a single script. You can choose to run it thr
   perl D4rwin.pl
   ```
 2. **Graphical Interface**: Using a Python script (`python3`), providing a user-friendly graphical interface.
-**Usage:**
 - **Graphical Interface for D4rwin (Python)**: 
   ```bash
   python3 D4rwin.py
@@ -66,7 +65,6 @@ Each of these phases is controlled by specific commands, which are explained in 
 This command automates the creation of a custom database using GenBank data for specific taxonomic groups. It reads a configuration file that includes parameters like taxonomic identifiers (TxIds), search terms (e.g., 'NOT predicted'), sequence size limits, and batch size. It uses NCBI’s esearch and efetch tools to search and download sequences in batches. 
 
 Key Features:
-- Generates a text file with accession numbers for the downloaded sequences in FASTA format.
 - Includes batch processing to manage large datasets, improving computational efficiency.
 - Handles download errors by retrying up to four times with increasing intervals (5 minutes, 10 minutes, 30 minutes, and 1 hour).
 - Implements a one-hour time limit for each execution to ensure the task is restarted in case of server overload.
@@ -83,6 +81,7 @@ This command automates the execution of BLAST on large sequence databases, enabl
 Key Features:
 - Executes BLAST using configuration parameters like E-value, minimum sequence coverage, number of threads (processors), database type (nucleotides, proteins, etc.), use of the DUST filter, and strand orientation (positive, negative, or both).
 - Includes multiple retries (up to 3 attempts) in case of errors or memory exhaustion, with increasing time intervals between attempts (10, 15, and 30 minutes).
+- Implements a twelve-hour time limit for each execution to ensure the task is restarted in case of server overload.
 - If the maximum retries are reached without success, the batch is skipped, and the process continues, allowing the user to split the remaining batches for further analysis.
 - Generates a table file (.outfl) containing essential alignment data, such as:
   - Accession numbers for the query and reference sequences.
@@ -99,7 +98,7 @@ The *clstr_only* command automates the analysis of the BLAST output file, identi
 
 Key Features:
 - Allows for more complex filtering, meeting multiple simultaneous requirements to build both qualitative (ortholog-based) and quantitatively well-sampled clusters.
-- Supports integration of a custom taxonomic dictionary (following the example in *ALL_taxonomy_summary.tsv* and maintaining the same name) or the widely used NCBI standard dictionary. Users are encouraged to standardize the nomenclature manually or using regular expressions before BLAST and clustering.
+- Supports integration of a custom taxonomic dictionary (following the example in *ALL_taxonomy_summary.tsv* and maintaining the same name) or the widely used NCBI standard dictionary. Users are encouraged to standardize the taxonomy manually or using regular expressions before BLAST and clustering.
 - Implements parallel processing for increased efficiency, supporting large taxonomic groups and high-performance computing infrastructures.
 - Automatically extracts clustering criteria from the configuration file, including:
   - Minimum sequence number and thresholds for BLAST parameters (alignment length, E-value, qcovs, qcovshsp).
@@ -148,12 +147,11 @@ Key Features:
 - **Cluster Combination**: Users can choose to combine clusters of sequences from the same marker before filtering, ensuring that redundant sequences are handled early.
 - **Hybrid Species Support**: Handles hybrid species names (e.g., *Bos indicus x Bos taurus*) for accurate filtering.
 - **Multi-level Filtering**: Allows filtering at taxonomic levels higher than species, such as genus, family, order, and class, in two stages:
-  1. **Stage 1**: Run the command at the species level to remove duplicates and combine identical marker clusters.
-  2. **Stage 2**: Rerun the command with the desired higher taxonomic level (e.g., genus, family, order, or class) to append corresponding taxonomic information to the sequence names.
+  1. **Stage 1**: Run manually the command at the species level to remove duplicates, combine identical marker clusters and ensure that redundant sequences for species level are handled.
+  2. **Stage 2**: Change to the new folder called  *0.Clusters_filtered_per_Species*, and rerun manually the command with the desired higher taxonomic level (e.g., genus, family, order, or class).
 
 **Additional Outputs**:
-- **Filtered Sequences**: Filtered sequences are saved in a directory called *0.Clusters_filtered*, with taxonomic labels added as per the chosen level.
-- **Taxonomic Information**: The taxonomic labels are appended to species names, ensuring the sequences are clearly identified for further analysis.
+- **Taxonomic Information**: The taxonomic labels (genus, family, order or class) are appended to species names, ensuring the sequences are clearly identified for further analysis.
 - **Filtered Clusters by Taxonomic Level**: Filtered markers are stored in a directory named according to the selected taxonomic level (e.g., *0.Clusters_filtered_per_Genus*).
 
 ---
@@ -170,6 +168,7 @@ Key Features:
   - Replaces underscores (`_`) with spaces.
   - Adds the file name to the end of the sequence header.
   - Precedes the header with the accession number (e.g., `>AccessionNumber Species Marker`).
+  
   This process enables the identification of final markers and their corresponding species, as referenced in the *clstr_only* output.
 
 ---
@@ -186,45 +185,32 @@ Key Features:
 
 ---
 
-## **4. Advanced Options**
-
-- **Batch Processing**: For large datasets, the pipeline allows batch processing at every step. This is managed through the configuration file.
-- **Custom Databases**: You can integrate custom sequence databases into the BLAST alignment and clustering steps.
-- **Dynamic Integration**: The pipeline allows the integration of new sequence data dynamically by placing it in the same directory for future analysis.
-
----
-
-## **5. Troubleshooting and FAQ**
+## **Troubleshooting and FAQ**
 
 - **Issue**: "BLAST alignment is taking too long."
   - **Solution**: Ensure that you are using appropriate batch sizes and taxonomic levels to optimize processing time.
 
 ---
 
-## **6. Contact and Support**
+## **Contact and Support**
 
-For further assistance or questions, please feel free to open an issue or submit a pull request on the GitHub repository.
+For questions or contributions, feel free to open an issue, submit a pull request, or contact us via email at [denerdacosta12@gmail.com].
 
 ---
 
-This updated manual includes the clarification about the two ways of executing the script and how the Python script can help generate the configuration file. Let me know if you need any further changes! 😊
-
-## License
+## **License**
 
 This project is licensed under the **AGPL-3.0 License**. 
 
-### **Key Points:**
+### **Key Points**
 - You may use, modify, and distribute the software freely, but any modified versions must also be released under the **AGPL-3.0**.
 - If you modify and deploy the software (even as a service), you must provide the **source code** for your modifications and ensure users can access it.
 - You must provide appropriate **attribution** to the original authors and include a copy of the license when redistributing the software.
 
 For more information on the AGPL-3.0 license, visit: [GNU AGPL-3.0 License](https://www.gnu.org/licenses/agpl-3.0.html).
 
-## Acknowledgements
+## **Acknowledgements**
 
 - This project uses **BLAST** for sequence comparison.
 - Special thanks to **NCBI** for providing access to GenBank and tools for downloading and searching databases.
 
-## Contact
-
-For questions or contributions, feel free to open an issue, submit a pull request, or contact us via email at [denerdacosta12@gmail.com].
