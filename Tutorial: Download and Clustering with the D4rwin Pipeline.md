@@ -129,10 +129,6 @@ After the clustering process, review the outputs:
 
 ---
 
-Here’s the updated version with the renaming step included before Step 6:
-
----
-
 **Step 6: Renaming Sequences**
 
 Before proceeding with the post-processing, it's important to rename the sequences based on the information from the `Table_Clusters`. This will help you match sequences to their respective clusters and ensure proper identification.
@@ -172,16 +168,7 @@ The pipeline generated six  markers—three nuclear (12S, GAPDH, RAG-1) and thre
 
 With these results, you're well-equipped to move forward with more advanced analyses, such as constructing phylogenetic trees or exploring the biogeographical patterns of Trogoniformes.
 
-Here's the updated conclusion with your observation added:
-
 ---
-
-### **Conclusion**
-
-Congratulations! You have successfully downloaded 44 clusters using the D4rwin pipeline. These clusters are now ready for further analysis, including phylogenetic studies.
-
-The pipeline generated six key markers—three nuclear (12S, GAPDH, RAG-1) and three mitochondrial (CYTB, ND2, TGFB2), covering 38 species across all genera of Trogoniformes. After updating the taxonomic information, the species distribution is as follows: *Trogon* (69.5%, 16/23 spp.), *Priotelus* (100%, 2/2 spp.), *Pharomachrus* (100%, 5/5 spp.), *Harpactes* (100%, 10/10 spp.), *Apaloderma* (100%, 3/3 spp.), *Apalharpactes* (50%, 1/2 spp.), and *Euptilotis* (100%, 1/1 spp.).
-
 ### **Observation:**
 If you decide to use your own taxonomic table, make sure the file is named **ALL_taxonomy_summary.tsv** and placed in the same directory where you will run your analysis. Additionally, set the parameter in your configuration file as follows:
 ```plaintext
