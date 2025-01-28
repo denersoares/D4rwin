@@ -1,7 +1,7 @@
 ### **Tutorial: Download and Clustering with the D4rwin Pipeline**
 
 In this tutorial, we will guide you through the steps to download and cluster sequence data using the **D4rwin** pipeline, focusing on the **Trogoniformes** order. This tutorial demonstrates the pipeline's ability to perform efficient marker selection for phylogenetic analyses.
-
+ 
 #### **Step 1: Install the D4rwin Pipeline**
 
 Before beginning, make sure that the D4rwin pipeline is installed on your system. Follow the instructions in the **README** file for installation.
