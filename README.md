@@ -8,12 +8,12 @@ The pipeline can be executed using a single script. You can choose to run it thr
   ```bash
   perl D4rwin.pl
   ```
-2. **Graphical Interface**: Using a Python script (`python3`), providing a user-friendly graphical interface.
+2. **Graphical Interface**: Using a Python script (`python3`), providing a user-friendly graphical interface for:
 - **Launching D4rwin (Python) with Output Displayed in a Terminal Window (Slower Than Terminal-Only Execution)**: 
   ```bash
   python3 D4rwin.py
   ```
-- **Configuration File Builder (Python)**: 
+- **Building a Configuration File (Python)**: 
   ```bash
   python3 Configure_D4rwin_Builder.py
   ```
