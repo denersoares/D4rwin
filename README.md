@@ -9,7 +9,7 @@ The pipeline can be executed using a single script. You can choose to run it thr
   perl D4rwin.pl
   ```
 2. **Graphical Interface**: Using a Python script (`python3`), providing a user-friendly graphical interface for:
-- **Launching D4rwin (Python) with Output Displayed in a Terminal Window (~10% slower than terminal-only execution)**: 
+- **Launching D4rwin (Python) with Output Displayed in a Terminal Window (~10.7% slower than terminal-only execution)**: 
   ```bash
   python3 D4rwin.py
   ```
