@@ -5,16 +5,15 @@
 
 The pipeline can be executed using a single script. You can choose to run it through:
 1. **Terminal**: Via Perl scripts, executed directly from the terminal with `perl`.
-- **Terminal (Perl)**: 
   ```bash
   perl D4rwin.pl
   ```
 2. **Graphical Interface**: Using a Python script (`python3`), providing a user-friendly graphical interface.
-- **Graphical Interface for D4rwin (Python)**: 
+- **Launching D4rwin (Python) with Output Displayed in a Terminal Window (Slower Than Terminal-Only Execution)**: 
   ```bash
   python3 D4rwin.py
   ```
-- **Graphical for Configuration File Builder (Python)**: 
+- **Configuration File Builder (Python)**: 
   ```bash
   python3 Configure_D4rwin_Builder.py
   ```
