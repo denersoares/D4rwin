@@ -95,14 +95,14 @@ Top Sequences Per Taxonomic Level=1;
    ```bash
    python3 D4rwin.py
    ```
-2. **Run the command `txnmc_clstr_ncbi` command** to download sequences and cluster them based on the configuration file:
+2. **Run the command `txnmc_clstr_ncbi` command** to download sequences and cluster based on the configuration file:
 
    ```bash
    txnmc_clstr_ncbi
    ```
 
    This command will:
-   - Download sequences based on the defined taxonomic level (species).
+   - Download sequences based on the defined taxonomic level (TxId).
    - Exclude unwanted terms such as "complete genome" or "unverified".
    - Perform clustering based on the configured parameters.
 
@@ -123,9 +123,9 @@ After the clustering process, review the outputs:
    - One table for sequences that meet the criteria.
    - Another for sequences that don't meet the criteria.
    
-   These tables show taxonomic information, including the number of species, genera, families, and other taxonomic levels.
+   These tables show taxonomic information, including the number of species, genera, families, and their respective accession numbers.
 
-3. **Table_Clusters**: A table with full GenBank sequence headers will also be generated in the `0.Clusters` directory. Use this table to create a list and rename the sequences. This will allow you to match the sequences to their respective clusters and perform any necessary refinements.
+3. **Table_Clusters**: A table with full GenBank sequence headers will also be generated in the `0.Clusters` directory. 
 
 ---
 
@@ -133,22 +133,35 @@ After the clustering process, review the outputs:
 
 Before proceeding with the post-processing, it's important to rename the sequences based on the information from the `Table_Clusters`. This will help you match sequences to their respective clusters and ensure proper identification.
 
-1. **Review `Table_Clusters`**: Open the `Table_Clusters` file in the `0.Clusters` directory. This table contains the full GenBank sequence headers, which you'll use to create a list and rename sequences.
+1. **Review `Table_Clusters`**: Open the `Table_Clusters` file in the `0.Clusters` directory. Use this table to create a list and rename the sequences (eg. C1_**marker**.fasta C1 as Cluster1). This will allow you to match the sequences to their respective clusters and perform any necessary refinements such as match sequences to their respective clusters and ensure proper identification.
 
-2. **Create a List**: Extract the necessary sequence identifiers (e.g., species name, accession number) and create a list of sequences to rename. You can use a script or manually organize the identifiers into a `list.txt` file.
+2. **Change your directory to **0.Clusters** and use the `rnm_clstr` command** to combine sequences of the same marker, selecting the longest sequence for each species. If you are using the pipeline via Terminal, run `exit`, change the directory and then execute again the pipeline.
+  
+   Change directory (cd):
+   ```bash
+   cd 0.Clusters
+   ```
 
-1. **Use the `rnm_clstr` command** to combine sequences of the same marker, selecting the longest sequence for each species:
-
+   Run `rnm_clstr`:
+   
    ```bash
    rnm_clstr
    ```
+
 ---
 
 #### **Step 7: Post-Processing**
 
-After downloading and clustering the sequences, you may perform post-processing steps to refine the data:
+Change your directory to **0.Renamed_Clusters** or the directort of interest. After downloading and clustering the sequences, you may perform post-processing steps to refine the data. If you are using the pipeline via Terminal, run `exit`, change the directory and then execute again the pipeline:
 
 1. **Use the `filtr_per_txnmc_lvl` command** to combine sequences of the same marker, selecting the longest sequence for each species:
+
+   Change directory (cd):
+   ```bash
+   cd 0.Renamed_Clusters
+   ```
+
+      Run `filtr_per_txnmc_lvl`:
 
    ```bash
    filtr_per_txnmc_lvl
@@ -169,8 +182,10 @@ The pipeline generated six  markers—three nuclear (12S, GAPDH, RAG-1) and thre
 With these results, you're well-equipped to move forward with more advanced analyses, such as constructing phylogenetic trees or exploring the biogeographical patterns of Trogoniformes.
 
 ---
+
 ### **Observation:**
 If you decide to use your own taxonomic table, make sure the file is named **ALL_taxonomy_summary.tsv** and placed in the same directory where you will run your analysis. Additionally, set the parameter in your configuration file as follows:
+
 ```plaintext
 Use NCBI Taxonomic Table=No;
 ```
