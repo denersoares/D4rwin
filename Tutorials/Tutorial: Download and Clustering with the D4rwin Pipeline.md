@@ -175,12 +175,13 @@ Change your directory to **0.Renamed_Clusters** or the directort of interest. Af
 
 ### **Conclusion**
 
-Congratulations! You have successfully downloaded 44 clusters using the D4rwin pipeline.
+Congratulations! You have successfully downloaded 44* clusters using the D4rwin pipeline.
 
-The pipeline generated six  markers—three nuclear (12S, GAPDH, RAG-1) and three mitochondrial (CYTB, ND2, TGFB2), covering 38 species across all genera of Trogoniformes. After updating the taxonomic information, the species distribution is as follows: *Trogon* (69.5%, 16/23 spp.), *Priotelus* (100%, 2/2 spp.), *Pharomachrus* (100%, 5/5 spp.), *Harpactes* (100%, 10/10 spp.), *Apaloderma* (100%, 3/3 spp.), *Apalharpactes* (50%, 1/2 spp.), and *Euptilotis* (100%, 1/1 spp.).
+The pipeline generated six* markers — three nuclear (12S, GAPDH, RAG-1) and three mitochondrial (CYTB, ND2, TGFB2), covering 38 species across all genera of Trogoniformes. After updating the taxonomic information, the species distribution is as follows: *Trogon* (69.5%, 16/23 spp.), *Priotelus* (100%, 2/2 spp.), *Pharomachrus* (100%, 5/5 spp.), *Harpactes* (100%, 10/10 spp.), *Apaloderma* (100%, 3/3 spp.), *Apalharpactes* (50%, 1/2 spp.), and *Euptilotis* (100%, 1/1 spp.).
 
 With these results, you're well-equipped to move forward with more advanced analyses, such as constructing phylogenetic trees or exploring the biogeographical patterns of Trogoniformes.
 
+#### *Results may vary. These are the numbers of markers that were available for download until January/2025.
 ---
 
 ### **Observation:**
