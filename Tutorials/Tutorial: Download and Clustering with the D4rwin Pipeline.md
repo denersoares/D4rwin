@@ -4,7 +4,7 @@ In this tutorial, we will guide you through the steps to download and cluster se
  
 #### **Step 1: Install the D4rwin Pipeline**
 
-Before beginning, make sure that the D4rwin pipeline is installed on your system. Follow the instructions in the **README** file for installation.
+Before beginning, make sure that the D4rwin pipeline and the prerequisites are installed on your system. Follow the instructions in the **README** file for installation.
 
 ---
 
