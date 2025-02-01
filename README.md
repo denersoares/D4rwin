@@ -192,7 +192,7 @@ Key Features:
 ## **Troubleshooting and FAQ**
 
 - **Issue**: "BLAST alignment is taking too long."
-  - **Solution**: Ensure that you are using appropriate batch sizes and taxonomic levels to optimize processing time.
+  - **Solution**: Ensure that you are using appropriate batch sizes to optimize processing time.
 
 ---
 
