@@ -13,10 +13,11 @@ The pipeline can be executed using a single script. You can choose to run it thr
 2. **Graphical Interface**: Using a Python script (`python3`), providing a user-friendly graphical interface for:
 
 - Launching D4rwin (Python) with Output Displayed in a Terminal Window (~10.7% slower than terminal-only execution):
+
   ```bash
   python3 D4rwin.py
   ```
-
+  **Please do not relocate the script from its folder.**
 - Building a Configuration File (Python):
   ```bash
   python3 Configure_D4rwin_Builder.py
