@@ -35,6 +35,7 @@ Before using the D4rwin pipeline, ensure that the following are installed:
 - **NCBI tools** for sequence search and download ([Entrez Direct](https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)).
 - **Python 3 or higher** (optional, for the graphical interface).
 - **PyQt6 (Python module)**
+- **tkinter (Python module)**
 
 The pipeline is designed to work on **Unix-like systems** (e.g., **Linux** or **macOS**). It is not supported on **Windows** natively.
 
